@@ -4,6 +4,8 @@
     position: absolute; left:0; top:0;
     background-color:white;
     border: 5px solid gray;
+    z-index: 99996; /* less than google dict extension*/
+    /* box-sizing: border-box;   cannot help*/
 }
 #longdo-head {
     background-color: #FF7F04;
