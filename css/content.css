@@ -1,0 +1,14 @@
+.exit-card {
+    width: 400px;
+    height: 233px;
+    position: absolute; left:0; top:0;
+    background-color:white;
+    border: 5px solid gray;
+}
+#longdo-head {
+    background-color: #FF7F04;
+    width: 100%;
+    height: 33px;
+    padding: 5px;
+    box-sizing: border-box;
+}
