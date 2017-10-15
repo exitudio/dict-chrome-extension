@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <title>Quick Search Dictionary</title>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <style>
+    body {
+      width: 640px;
+      height: 600px;
+    }
+
+    input:focus,
+    a:focus {
+      outline: none;
+    }
+
+    #longdo-head{
+      background-color:#FF7F04;
+      width:100%;
+      padding:5px;
+    }
+  </style>
+  <script src="js/popup.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">
+      Quick Dictionary
+    </a>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+      <button class="btn btn-primary btn-sm" type="submit">Search</button>
+    </form>
+  </nav>
+  <div id="longdo-head"><img src="https://dict.longdo.com/download/search_box/images/longdo-dict-small.png"/></div>
+  <div id="longdo-result"></div>
+  <div id="longdo-head"><img src="https://dict.longdo.com/download/search_box/images/longdo-dict-small.png"/></div>
+  <div id="google-dict-result"></div>
+  <div id="longdo-head"><img src="https://dict.longdo.com/download/search_box/images/longdo-dict-small.png"/></div>
+  <div id="aonaware-dict-result"></div>
+  <div id="longdo-head"><img src="https://dict.longdo.com/download/search_box/images/longdo-dict-small.png"/></div>
+  <div id="dictionary-dict-result"></div>
+</body>
+
+</html>
