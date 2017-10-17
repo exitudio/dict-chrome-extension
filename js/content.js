@@ -25,10 +25,21 @@ $(document).ready(function () {
             selectTextElement = window.getSelection();
             selectText = selectTextElement.toString();
         }else{
-            console.error('Browser is not support getSelection()');
-            $("#exit-dick").remove();
             return;
         }
+
+        var oRange;
+        try{
+            oRange = selectTextElement.getRangeAt(0); //get the text range
+        }catch(e){
+            return;
+        }
+        var oRect = oRange.getBoundingClientRect();
+        var x = oRect.x + window.scrollX + (oRect.width - popupWidth)/2;
+        var y = oRect.y + window.scrollY + oRect.height;
+        console.log('x',x,'window.scrollX:',window.scrollX);
+        if(x<window.scrollX) x=window.scrollX;
+        else if(x+popupWidth > window.scrollX + $(window).width() ) x= window.scrollX + $(window).width()-popupWidth;
 
         
         $('html').append('<div id="exit-dick" class="exit-card" >' +
@@ -36,21 +47,16 @@ $(document).ready(function () {
             '  <img src="https://dict.longdo.com/download/search_box/images/longdo-dict-small.png" />' +
             '</div>' +
             '<iframe src="https://dict.longdo.com/mobile.php?search='+selectText+'" width="400" height="200" frameBorder="0"/>' +
+            '<div id="longdo-head">' +
+            '  <img src="https://dict.longdo.com/download/search_box/images/longdo-dict-small.png" />' +
+            '</div>' +
             '</div>');
         $('body').click(function (e) {
-            console.log('click outside!!')
             $('#exit-dick').remove();
         });
-
-
-
-        var oRange = selectTextElement.getRangeAt(0); //get the text range
-        var oRect = oRange.getBoundingClientRect();
-        var x = oRect.x + window.scrollX + (oRect.width - popupWidth)/2;
-        var y = oRect.y + window.scrollY + oRect.height;
-        console.log('x',x,'window.scrollX:',window.scrollX);
-        if(x<window.scrollX) x=window.scrollX;
-        else if(x+popupWidth > window.scrollX + $(window).width() ) x= window.scrollX + $(window).width()-popupWidth;
+        $(window).resize(function(){
+            $('#exit-dick').remove();
+        })
         $('#exit-dick').css({left: x+'px', top: y+'px'})
         console.log('oRect:', oRect);
 

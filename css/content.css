@@ -1,6 +1,6 @@
 .exit-card {
     width: 410px;
-    height: 243px; /* 200+33+5+5 */
+    height: 276px; /* 200+33+5+5 */
     position: absolute; left:0; top:0;
     background-color:white;
     border: 5px solid gray;
