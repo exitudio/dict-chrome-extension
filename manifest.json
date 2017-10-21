@@ -1,13 +1,13 @@
 {
     "manifest_version": 2,
   
-    "name": "Getting started example",
+    "name": "Dickionary",
     "description": "This extension allows the user to change the background color of the current page.",
     "version": "1.0",
     "content_scripts": [
       {
         "matches": ["http://*/*","https://*/*"],
-        "js": ["js/jquery-3.2.1.slim.min.js","js/content.js"],
+        "js": ["js/jquery-3.2.1.min.js","js/content.js"],
         "css": ["css/content.css"]
       }
     ],

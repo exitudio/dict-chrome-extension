@@ -14,3 +14,8 @@
     padding: 5px;
     box-sizing: border-box;
 }
+.content-area{
+    width:400px;
+    height:200px;
+    display: block;
+}
